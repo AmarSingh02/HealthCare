@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Breadcrumbs from '../../../components/Breadcrumbs';
-
-
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const Education = () => {
   const tabs = [
@@ -28,6 +27,8 @@ const Education = () => {
 
 
   ]
+
+  const navigate=useNavigate();
 
   const [activeTab, setActiveTab]=useState("All");
   const filterBlog=activeTab==="All" ? educationBlog : educationBlog.filter((item)=> item.typeofDiease === activeTab)
@@ -72,10 +73,11 @@ const Education = () => {
         <div className="w-[70%] p-2 h-full overflow-y-auto overflow-hidden">
   <div className="bg-gray-50 rounded-2xl p-5 grid grid-cols-2 gap-4">
     {filterBlog.map((item, index) => (
-      <div key={index} className="bg-white rounded-xl shadow p-4">
-        <p className="text-sm text-gray-500">#{item.id} - {item.typeofDiease}</p>
 
       
+      <div key={index} className="bg-white rounded-xl shadow p-4 cursor-pointer" onClick={() => navigate(`/patient-education/${item.id}`)}>
+        <p className="text-sm text-gray-500">#{item.id} - {item.typeofDiease}</p>
+
 
         {item.urlPath ? (
   <div className="aspect-video">
@@ -99,6 +101,8 @@ const Education = () => {
 </div>
 
       </div>
+
+        <Outlet />
     </div>
   )
 }

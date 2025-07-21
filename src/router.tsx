@@ -1,7 +1,7 @@
 
 import React, { lazy, Suspense, type ReactNode } from 'react';
 import { Route, Routes, Navigate, useLocation, Outlet } from 'react-router-dom';
-import Loader  from './components/Loader';
+import Loader from './components/Loader';
 // Lazy load components
 const Login = lazy(() => import('./Auth/login'));
 const Register = lazy(() => import('./Auth/register'));
@@ -13,6 +13,8 @@ const Vitals = lazy(() => import('./pages/patient/Monitoring/Vitals'));
 const Prescription = lazy(() => import('./pages/patient/Monitoring/Prescription'));
 const SymptomsMonitoring = lazy(() => import('./pages/patient/Monitoring/Symptoms'));
 const Education = lazy(() => import('./pages/patient/education/Education'));
+const EducationDetails = lazy(() => import('./pages/patient/education/EducationDetails'));
+
 
 const getUserRole = (): string | null => localStorage.getItem('role');
 
@@ -37,7 +39,7 @@ const AppRouter: React.FC = () => {
     <>
       <Suspense fallback={<div className='flex items-center justify-center text-center mt-5'>
 
-        <Loader/>
+        <Loader />
       </div>}>
         {shouldShowHeader && <Header />}
         <Routes>
@@ -62,7 +64,7 @@ const AppRouter: React.FC = () => {
             }
           >
             <Route index element={<SymptomsMonitoring />} />
-            <Route path="vitals" element={<Vitals/>} />
+            <Route path="vitals" element={<Vitals />} />
             <Route path="prescription" element={<Prescription />} />
           </Route>
 
@@ -73,7 +75,17 @@ const AppRouter: React.FC = () => {
                 <Education />
               </ProtectedRoute>
             }
-          />
+          >
+            
+          </Route>
+          <Route
+              path="/patient-education/:id"
+              element={
+                <ProtectedRoute role="patient">
+                  <EducationDetails />
+                </ProtectedRoute>
+              }
+            />
 
           <Route
             path="/doctor-dashboard"

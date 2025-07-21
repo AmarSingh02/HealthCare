@@ -13,7 +13,7 @@ const Header: React.FC = () => {
     };
 
     return (
-      <header className="fixed top-0 w-full flex justify-between items-center p-4 shadow-md backdrop-blur-md bg-white/30 z-50">
+      <header className="fixed top-0 w-full flex justify-between items-center p-2 shadow-md backdrop-blur-md bg-white/30 z-50">
 
 
             <div className="logo">
