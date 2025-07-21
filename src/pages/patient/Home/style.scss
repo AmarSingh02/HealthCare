@@ -1,0 +1,47 @@
+
+
+.profile_img{
+    img{
+        border-radius: 50%;
+      width: 80px;
+      height: 80px;
+    }
+}
+
+.patient_greeting {
+  position: relative;
+  background-image: url('../../../assets/images/patient_home_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.patient_greeting::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #B6D3FF4D, #B6D3FF);
+  opacity: 30;
+  z-index: -999;
+
+}
+
+
+@keyframes wave {
+  0% { transform: rotate(-38deg); }
+  10% { transform: rotate(24deg); }
+  20% { transform: rotate(8deg); }
+  30% { transform: rotate(24deg); }
+  40% { transform: rotate(8deg); }
+  50% { transform: rotate(24deg); }
+  60% { transform: rotate(8deg); }
+  100% { transform: rotate(38eg); }
+}
+
+.wave-hand img {
+  transform-origin: 70% 70%; /* Adjust this to make it look natural */
+  display: inline-block;
+  animation: wave 1.5s infinite;
+}

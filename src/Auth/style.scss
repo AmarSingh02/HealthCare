@@ -1,0 +1,26 @@
+
+
+.login_section{
+   background-image: url('../assets/images/login_img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;          /* Ensures the image covers the full section */
+
+}
+
+.register_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.register_section {
+  width: 100%;
+  max-width: 600px;
+//   height: 100vh;
+  box-shadow: 0 2px 20px #0000003b;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: white;
+}
