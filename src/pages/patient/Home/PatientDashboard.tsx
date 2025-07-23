@@ -22,7 +22,7 @@ const PatientDashboard = () => {
     <>
       <div className=" text-md p-4 mt-15  flex">
 
-        <div className="w-[15%] shadow-md h-145 p-5 mt-4 rounded-2xl border border-gray-300">
+        <div className="w-[15%] bg-white shadow-md h-145 p-5 mt-4 rounded-2xl border border-gray-300">
           <div className="patient_details text-center">
             <div className="profile_img flex justify-center">
               <img src={PATIENTPROFILE} alt="" />
@@ -37,7 +37,7 @@ const PatientDashboard = () => {
 
           </div>
         </div>
-        <div className="w-[60%] flex gap-4 p-3 ml-4 shadow-md h-[580px] mt-4 rounded-2xl bg-[#EFF9FF]  relative z-[-999] ">
+        <div className="w-[60%] bg-white flex gap-4 p-3 ml-4 shadow-md h-[580px] mt-4 rounded-2xl bg-[#EFF9FF]  relative z-[-999] ">
 
           <div className="w-[70%] ">
 
@@ -69,7 +69,7 @@ const PatientDashboard = () => {
           </div>
 
         
-          <div className="w-[30%] shadow-md bg-[#E3F3DB] p-2 rounded-2xl">
+          <div className="w-[30%]  shadow-md bg-[#E3F3DB] p-2 rounded-2xl">
             <div className="w-full  bg-gradient-to-b from-light-green via-[#E3F3DB99] to-light-green rounded-xl flex md:flex-col justify-center items-center p-2 gap-2">
               <div className="w-full h-1/4 md:p-4   flex  gap-2 justify-between items-center md:border-b-2">
                 <img src={Symptoms} alt="" className="w-10 h-10 text-green-icon" />
@@ -127,7 +127,7 @@ const PatientDashboard = () => {
         
 
 
-        <div className="w-[30%] mt-5 shadow-md rounded-2xl bg-[#f4f4f5] ml-4 h-145">
+        <div className="w-[30%] bg-white mt-5 shadow-md rounded-2xl bg-[#f4f4f5] ml-4 h-145">
           <div className="h-120 flex items-center justify-center ">
             <JourneyMap />
           </div>

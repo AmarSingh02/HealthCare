@@ -5,7 +5,7 @@ import SympthomsGraph from '../../../components/sympthomsGraph';
 import type { Mode } from '../../../components/DateSelector';
 import DateSelector from '../../../components/DateSelector';
 import Calendar from '../../../components/DateSelector';
-import type { CalendarMode } from '../../../components/DateSelector';
+ import type { CalendarMode } from '../../../components/DateSelector';
 
 
 const SymptomsMonitoring = () => {

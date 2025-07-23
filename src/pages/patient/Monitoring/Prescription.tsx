@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TablePrescription from '../../../components/TablePrescription'
 
+
 const Prescription = () => {
+
+
   return (
     <div className='p-4'>
-      <TablePrescription/>
+       
+
+       <div>
+ <TablePrescription/>
+       </div>
+     
     </div>
   )
 }

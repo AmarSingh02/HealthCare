@@ -22,7 +22,7 @@ const SymptomMonitoring = () => {
     <div className="p-5">
       <Breadcrumbs />
 
-      <div className="flex justify-between mb-5">
+      <div className="flex justify-between">
         <div className="heading">
           <h1>{heading}</h1>
         </div>

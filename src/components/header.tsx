@@ -13,7 +13,7 @@ const Header: React.FC = () => {
     };
 
     return (
-      <header className="fixed top-0 w-full flex justify-between items-center p-2 shadow-md backdrop-blur-md bg-white/30 z-50">
+      <header className="fixed top-0 w-full flex justify-between items-center p-2 backdrop-blur-md bg-[#e5f4ff]/30 z-50">
 
 
             <div className="logo">
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
                             className={({ isActive }) =>
                                 `shadow-md px-8 py-1 rounded-full ${isActive
                                     ? 'bg-gray-900 text-white' // Active styles
-                                    : 'hover:bg-gray-900 hover:text-white' // Default hover styles
+                                    : 'bg-white' // Default hover styles
                                 }`
                             }
                         >
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
                         <NavLink to="/symptom-Monitoring" className={({ isActive }) =>
                             `shadow-md px-8 py-1 rounded-full ${isActive
                                 ? 'bg-gray-900 text-white' // Active styles
-                                : 'hover:bg-gray-900 hover:text-white' // Default hover styles
+                                : ' bg-white' // Default hover styles
                             }`
                         }>
                             Monitoring
@@ -50,10 +50,19 @@ const Header: React.FC = () => {
                         <NavLink to="/patient-education" className={({ isActive }) =>
                             `shadow-md px-8 py-1 rounded-full ${isActive
                                 ? 'bg-gray-900 text-white' // Active styles
-                                : 'hover:bg-gray-900 hover:text-white' // Default hover styles
+                                : 'bg-white' // Default hover styles
                             }`
                         } >
                             Education
+                        </NavLink>
+
+                        <NavLink to="/collabroation" className={({ isActive }) =>
+                            `shadow-md px-8 py-1 rounded-full ${isActive
+                                ? 'bg-gray-900 text-white' // Active styles
+                                : 'bg-white' // Default hover styles
+                            }`
+                        } >
+                            Collabroation
                         </NavLink>
                     </>
                 )}
@@ -63,7 +72,7 @@ const Header: React.FC = () => {
                         <NavLink to="/doctor-dashboard" className={({ isActive }) =>
                             `shadow-md px-8 py-1 rounded-full ${isActive
                                 ? 'bg-gray-900 text-white' // Active styles
-                                : 'hover:bg-gray-900 hover:text-white' // Default hover styles
+                                : 'bg-white' // Default hover styles
                             }`
                         } >
                             Dashboard
@@ -71,7 +80,7 @@ const Header: React.FC = () => {
                         <NavLink to="/doctor-patients" className={({ isActive }) =>
                             `shadow-md px-8 py-1 rounded-full ${isActive
                                 ? 'bg-gray-900 text-white' // Active styles
-                                : 'hover:bg-gray-900 hover:text-white' // Default hover styles
+                                : 'bg-white' // Default hover styles
                             }`
                         }>
                             Patients
@@ -79,7 +88,7 @@ const Header: React.FC = () => {
                         <NavLink to="/doctor-schedule" className={({ isActive }) =>
                             `shadow-md px-8 py-1 rounded-full ${isActive
                                 ? 'bg-gray-900 text-white' // Active styles
-                                : 'hover:bg-gray-900 hover:text-white' // Default hover styles
+                                : 'bg-white' // Default hover styles
                             }`
                         }>
                             Schedule

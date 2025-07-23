@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Calendar from './DateSelector';
+import type { CalendarMode } from '../../../components/DateSelector';
 
 const TablePrescription = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -31,6 +33,14 @@ const TablePrescription = () => {
 
   const isAllSelected = filteredProducts.length > 0 && selectedItems.length === filteredProducts.length
 
+  
+
+
+
+  const [rangeStart, setRangeStart] = useState<Date | null>(new Date());
+    const [rangeEnd, setRangeEnd] = useState<Date | null>(new Date());
+    const [mode, setMode] = useState<CalendarMode>('Weekly');
+
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -42,6 +52,11 @@ const TablePrescription = () => {
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
               </svg>
             </div>
+
+            <div className='flex justify-between'>
+
+      
+           
             <input 
               type="text" 
               id="table-search" 
@@ -50,6 +65,17 @@ const TablePrescription = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
+
+               <Calendar
+            rangeStart={rangeStart}
+            rangeEnd={rangeEnd}
+            onRangeChange={(start, end) => {
+              setRangeStart(start);
+              setRangeEnd(end);
+            }}
+            mode={mode}
+          />
+                </div>
           </div>
         </div>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
