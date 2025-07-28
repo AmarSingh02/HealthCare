@@ -17,6 +17,7 @@ const SymptomMonitoring = () => {
 
   const activeTab=tabs.find(tab => isTabActive(tab.path));
   const heading=activeTab? activeTab.label:'Symptoms Monitoring';
+  
 
   return (
     <div className="p-5">
@@ -24,7 +25,7 @@ const SymptomMonitoring = () => {
 
       <div className="flex justify-between">
         <div className="heading">
-          <h1>{heading}</h1>
+          <h1>{heading} </h1>
         </div>
 
         <div className="tabs flex gap-4">
@@ -38,7 +39,7 @@ const SymptomMonitoring = () => {
                   : 'bg-gray-200 text-black'
               }`}
             >
-              {tab.label}
+              {tab.label} 
             </button>
           ))}
         </div>

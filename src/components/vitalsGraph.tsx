@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
-
 import Calendar from '../components/DateSelector';
 import CalendarMode from '../components/DateSelector';
 
 const VitalsGraph = () => {
+  const [rangeStart, setRangeStart] = useState<Date | null>(new Date());
+  const [rangeEnd, setRangeEnd] = useState<Date | null>(new Date());
 
-      const [rangeStart, setRangeStart] = useState<Date | null>(new Date());
-      const [rangeEnd, setRangeEnd] = useState<Date | null>(new Date());
-    
-      const [mode, setMode] = useState<CalendarMode>('Daily');
+  const [mode, setMode] = useState<CalendarMode>('Daily');
   const [state] = React.useState({
     series: [
       {
@@ -30,7 +28,7 @@ const VitalsGraph = () => {
           color: '#000',
           top: 18,
           left: 7,
-     
+
         },
         zoom: {
           enabled: false
@@ -54,7 +52,7 @@ const VitalsGraph = () => {
         borderColor: '#e7e7e7',
         row: {
           colors: ['#f3f3f3', 'transparent'],
-        //   opacity: 0.5
+          //   opacity: 0.5
         },
       },
       markers: {
@@ -86,28 +84,25 @@ const VitalsGraph = () => {
   return (
     <div id="chart" className='bg-white p-3 rounded-2xl mt-2'>
 
-<div className='mb-2'>
-<Calendar
-              rangeStart={rangeStart}
-              rangeEnd={rangeEnd}
-              onRangeChange={(start: React.SetStateAction<Date | null>, end: React.SetStateAction<Date | null>) => {
-                setRangeStart(start);
-                setRangeEnd(end);
-              }}
-              mode={mode}
-            />
-</div>
-         
+      <div className='mb-2'>
+        <Calendar
+          rangeStart={rangeStart}
+          rangeEnd={rangeEnd}
+          onRangeChange={(start: React.SetStateAction<Date | null>, end: React.SetStateAction<Date | null>) => {
+            setRangeStart(start);
+            setRangeEnd(end);
+          }}
+          mode={mode}
+        />
+      </div>
+
       <ReactApexChart
         options={state.options}
         series={state.series}
         type="bar"
         height={410}
-
-       
       />
 
-       
     </div>
   );
 };
