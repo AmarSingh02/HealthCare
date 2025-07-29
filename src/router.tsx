@@ -2,7 +2,8 @@
 import React, { lazy, Suspense, type ReactNode } from 'react';
 import { Route, Routes, Navigate, useLocation, Outlet } from 'react-router-dom';
 import Loader from './components/Loader';
-// import Collaboration from './pages/patient/collabroation/Collaboration';
+import Todo from './pages/patient/pratice/Todo';
+
 // Lazy load components
 const Login = lazy(() => import('./Auth/login'));
 const Register = lazy(() => import('./Auth/register'));
@@ -16,6 +17,7 @@ const SymptomsMonitoring = lazy(() => import('./pages/patient/Monitoring/Symptom
 const Education = lazy(() => import('./pages/patient/education/Education'));
 const EducationDetails = lazy(() => import('./pages/patient/education/EducationDetails'));
  const Collaboration=lazy(()=>import('./pages/patient/collabroation/Collaboration'));
+ const Community=lazy(()=>import('./pages/patient/community/Community'))
 
 
 const getUserRole = (): string | null => localStorage.getItem('role');
@@ -98,6 +100,28 @@ const AppRouter: React.FC = () => {
             }
           >
             
+          </Route>
+
+
+<Route
+            path="/community"
+            element={
+              <ProtectedRoute role="patient">
+             <Community/>
+              </ProtectedRoute>
+            }
+          >
+
+          </Route>
+              <Route
+            path="/pratice"
+            element={
+              <ProtectedRoute role="patient">
+             <Todo/>
+              </ProtectedRoute>
+            }
+          >
+
           </Route>
 
           <Route

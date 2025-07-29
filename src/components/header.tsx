@@ -56,6 +56,15 @@ const Header: React.FC = () => {
                             Education
                         </NavLink>
 
+                         <NavLink to="/community" className={({ isActive }) =>
+                            `shadow-md px-8 py-1 rounded-full ${isActive
+                                ? 'bg-gray-900 text-white' // Active styles
+                                : 'bg-white' // Default hover styles
+                            }`
+                        } >
+                            Community
+                        </NavLink>
+
                         <NavLink to="/collabroation" className={({ isActive }) =>
                             `shadow-md px-8 py-1 rounded-full ${isActive
                                 ? 'bg-gray-900 text-white' // Active styles
@@ -64,6 +73,7 @@ const Header: React.FC = () => {
                         } >
                             Collabroation
                         </NavLink>
+                        
                     </>
                 )}
 

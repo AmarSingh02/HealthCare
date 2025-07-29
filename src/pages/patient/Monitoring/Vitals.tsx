@@ -40,7 +40,6 @@ const Vitals = () => {
       <div className="w-full flex p-3">
         <div className='w-[40%]'>
 
-          {/* <Heading heading='Get Vitals'/> */}
           <div className="w-[100%] flex flex-wrap">
 
             {getVitals.map((vital) => (

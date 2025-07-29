@@ -77,8 +77,6 @@ const Education = () => {
       
       <div key={index} className="bg-white rounded-xl shadow p-4 cursor-pointer" onClick={() => navigate(`/patient-education/${item.id}`)}>
         <p className="text-sm text-gray-500">#{item.id} - {item.typeofDiease}</p>
-
-
         {item.urlPath ? (
   <div className="aspect-video">
     <iframe
