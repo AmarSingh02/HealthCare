@@ -1,52 +1,111 @@
-import React, { useState } from 'react'
-import Breadcrumbs from '../../../components/Breadcrumbs'
-import { div } from 'framer-motion/client';
+import React, { useState } from 'react';
+import Breadcrumbs from '../../../components/Breadcrumbs';
+import AddCommunityPopup from '../../../components/addCommunityPopup';
+
+import imageURL from '../../../assets/images/communityImg.png'
+
 
 const Community = () => {
 
-  const [isPopupOpen, setIsPopupOpen]=useState(false);
+  const communityData = [
+    {
+      id: 1,
+      image: imageURL,
+      title: 'community1',
+      desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatum excepturi deserunt. Quo ipsam rem a officia commodi '
+    },
+    {
+      id: 2,
+      image: imageURL,
+      title: 'community2',
+      desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit.dignissimos assumenda, quia iure esse quam temporibus odio, repellendus praesentium! Perferendis, nobis. '
+    },
+    {
+      id: 1,
+      image: imageURL,
+      title: 'community1',
+      desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatum excepturi deserunt. Quo ipsam rem a officia commodi '
+    },
+    {
+      id: 2,
+      image: imageURL,
+      title: 'community2',
+      desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit.dignissimos assumenda, quia iure esse quam temporibus odio, repellendus praesentium! Perferendis, nobis. '
+    },
+    {
+      id: 1,
+      image: imageURL,
+      title: 'community1',
+      desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatum excepturi deserunt. Quo ipsam rem a officia commodi '
+    },
+    {
+      id: 2,
+      image: imageURL,
+      title: 'community2',
+      desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit.dignissimos assumenda, quia iure esse quam temporibus odio, repellendus praesentium! Perferendis, nobis. '
+    },
 
-  const handleOpenPopup=()=>{
-    setIsPopupOpen(true)
-  }
 
-   const handleclosePopup=()=>{
-    setIsPopupOpen(false)
-  }
+  ]
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleOpenPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   return (
-    <div className='p-4'>
-        <Breadcrumbs/>
-      <div className="flex justify-between">
+    <div className="p-10">
+      <Breadcrumbs />
 
-        <h2>Community </h2>
+      <div className="flex justify-between items-center mb-4 w-full h-full">
+        <h2 className="text-xl font-semibold">Community</h2>
 
-   <p className="text-xl cursor-pointer bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-green-500" onClick={handleOpenPopup}>
-  +
-</p>
+        {/* Plus Button */}
+        <button
+          className="text-xl cursor-pointer bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-500 transition-colors"
+          onClick={handleOpenPopup}
+        >
+          +
+        </button>
       </div>
 
-{isPopupOpen && (
-  <div className="fixed inset-0 flex items-center justify-center bg-black/10 bg-opacity-50 z-50 p-5">
-    <div className="relative bg-white p-6 rounded-2xl shadow-lg w-full h-full z-50 text-center bg-black/10 bg-opacity">
-
-
-
-      <button 
-        onClick={handleclosePopup}
-        className="absolute cursor-pointer top-2 right-2 bg-red-500 text-white px-5 py-2 rounded-full hover:bg-red-600"
-      >
-        ✕
-      </button>
+      
+      <div className='grid grid-cols-4 gap-[30px]'>
+        {
+        communityData.map((item, index)=>(
+          <>
   
+          <div key={index} className="rounded-xl" style={{ backgroundImage: `url(${item.image})` }}
+>
+<div className='shadow-md p-4 bg-white relative mt-40 rounded-xl'>
 
-      <h3 className="text-lg font-bold mb-4">Add Community</h3>
-      <p>Popup content goes here...</p>
+
+          <h4> {item.title}</h4>
+          <p>{item.desc.substring(0, 100) + '...'}</p> 
+
+          <div className="flex justify-between mt-10" >
+            <button className='bg-blue-600 text-white rounded-3xl py-1 px-5 cursor-pointer'>Join</button>
+            <button>Peoples</button>
+          </div>
+          </div>
+
+          </div>
+          </>
+        ))
+        }
+      </div>
+
+
+      <AddCommunityPopup
+        isOpen={isPopupOpen}
+        onClose={handleClosePopup}
+      />
     </div>
-  </div>
-)}
+  );
+};
 
-    </div>
-  )
-}
-
-export default Community
+export default Community;

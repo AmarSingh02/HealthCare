@@ -2,7 +2,7 @@
 import React, { lazy, Suspense, type ReactNode } from 'react';
 import { Route, Routes, Navigate, useLocation, Outlet } from 'react-router-dom';
 import Loader from './components/Loader';
-import Todo from './pages/patient/pratice/Todo';
+
 
 // Lazy load components
 const Login = lazy(() => import('./Auth/login'));
@@ -113,7 +113,7 @@ const AppRouter: React.FC = () => {
           >
 
           </Route>
-              <Route
+              {/* <Route
             path="/pratice"
             element={
               <ProtectedRoute role="patient">
@@ -122,7 +122,7 @@ const AppRouter: React.FC = () => {
             }
           >
 
-          </Route>
+          </Route> */}
 
           <Route
             path="/doctor-dashboard"
