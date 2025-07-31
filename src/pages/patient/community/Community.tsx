@@ -3,6 +3,7 @@ import Breadcrumbs from '../../../components/Breadcrumbs';
 import AddCommunityPopup from '../../../components/addCommunityPopup';
 
 import imageURL from '../../../assets/images/communityImg.png'
+import { useNavigate } from 'react-router-dom';
 
 
 const Community = () => {
@@ -21,13 +22,13 @@ const Community = () => {
       desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit.dignissimos assumenda, quia iure esse quam temporibus odio, repellendus praesentium! Perferendis, nobis. '
     },
     {
-      id: 1,
+      id: 3,
       image: imageURL,
       title: 'community1',
       desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatum excepturi deserunt. Quo ipsam rem a officia commodi '
     },
     {
-      id: 2,
+      id: 4,
       image: imageURL,
       title: 'community2',
       desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit.dignissimos assumenda, quia iure esse quam temporibus odio, repellendus praesentium! Perferendis, nobis. '
@@ -47,6 +48,10 @@ const Community = () => {
 
 
   ]
+
+  const navigate=useNavigate();
+
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handleOpenPopup = () => {
@@ -79,7 +84,7 @@ const Community = () => {
         communityData.map((item, index)=>(
           <>
   
-          <div key={index} className="rounded-xl" style={{ backgroundImage: `url(${item.image})` }}
+          <div key={index} className="rounded-xl" style={{ backgroundImage: `url(${item.image})`  }} onClick={() => navigate(`/communityDe/${item.id}`)}
 >
 <div className='shadow-md p-4 bg-white relative mt-40 rounded-xl'>
 

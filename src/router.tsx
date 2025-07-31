@@ -4,6 +4,7 @@ import { Route, Routes, Navigate, useLocation, Outlet } from 'react-router-dom';
 import Loader from './components/Loader';
 
 
+
 // Lazy load components
 const Login = lazy(() => import('./Auth/login'));
 const Register = lazy(() => import('./Auth/register'));
@@ -18,6 +19,7 @@ const Education = lazy(() => import('./pages/patient/education/Education'));
 const EducationDetails = lazy(() => import('./pages/patient/education/EducationDetails'));
  const Collaboration=lazy(()=>import('./pages/patient/collabroation/Collaboration'));
  const Community=lazy(()=>import('./pages/patient/community/Community'))
+ const CommunityDeatils =lazy(()=> import('./pages/patient/community/CommunityDeatils'))
 
 
 const getUserRole = (): string | null => localStorage.getItem('role');
@@ -113,6 +115,12 @@ const AppRouter: React.FC = () => {
           >
 
           </Route>
+
+          <Route path='/communityDe/:id'
+          element={<ProtectedRoute role='patient'>
+            <CommunityDeatils/>
+          </ProtectedRoute>}/>
+          
               {/* <Route
             path="/pratice"
             element={
