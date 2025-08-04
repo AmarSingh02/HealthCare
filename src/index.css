@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,4 +40,18 @@ span{
 
 body{
     background-color: #0495FF1A;
+}
+
+
+.ql-toolbar.ql-snow{
+    border: none !important;
+}
+
+.ql-container.ql-snow{
+    border: none !important; 
+}
+.quill {
+    border-radius: 20px;
+        box-shadow: 0 2px 10px #0000001a;
+    padding: 2px 40px;
 }

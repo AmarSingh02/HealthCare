@@ -2,7 +2,7 @@ import React from 'react'
 
 const DoctorDashboard = () => {
   return (
-    <div>
+    <div className='p-4 mt-15'>
       DoctorDashboard
     </div>
   )

@@ -17,13 +17,21 @@ const Login: React.FC = () => {
     e.preventDefault();
     const user = users.find(u => u.email === email && u.password === password);
 
-    if (user) {
-      localStorage.setItem('role', user.role);
-      // navigate(`/home/${user.role}`);
-       navigate('/patient-dashboard')
-    } else {
-      alert('Invalid credentials'); 
-    }
+
+     if (user) {
+  localStorage.setItem('role', user.role);
+
+  if (user.role === 'patient') {
+    navigate('/patient-dashboard');
+  } else if (user.role === 'doctor') {
+    navigate('/doctor-dashboard');
+  } else {
+    alert('Unknown role');
+  }
+} else {
+  alert('Invalid credentials');
+}
+
   };
 
   return (

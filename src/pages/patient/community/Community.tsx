@@ -79,12 +79,12 @@ const Community = () => {
       </div>
 
       
-      <div className='grid grid-cols-4 gap-[30px]'>
+      <div className='grid grid-cols-4 gap-[30px] cursor-pointer'>
         {
         communityData.map((item, index)=>(
           <>
   
-          <div key={index} className="rounded-xl" style={{ backgroundImage: `url(${item.image})`  }} onClick={() => navigate(`/communityDe/${item.id}`)}
+          <div key={index} className="rounded-xl" style={{ backgroundImage: `url(${item.image})`,  backgroundRepeat:'no-repeat'  }} onClick={() => navigate(`/communityDe/${item.id}`)}
 >
 <div className='shadow-md p-4 bg-white relative mt-40 rounded-xl'>
 
