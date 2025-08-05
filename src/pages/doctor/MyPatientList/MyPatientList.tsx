@@ -1,6 +1,7 @@
 import React from 'react'
 import Breadcrumbs from '../../../components/Breadcrumbs'
 import PatientListTable from '../../../components/PatientListTable'
+import Heading from '../../../components/Heading'
 
 const MyPatientList = () => {
   const patients = [
@@ -101,7 +102,7 @@ const MyPatientList = () => {
       <Breadcrumbs />
       <div className='shadow-md bg-white p-4 rounded-xl'>
 
-    
+    <Heading heading='Patient List'/>
       <PatientListTable needAction={true} patients={patients} />
         </div>
     </div>
