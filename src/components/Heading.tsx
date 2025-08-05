@@ -3,7 +3,7 @@ import React from 'react'
 const Heading = (props: { heading: string }) => {
   return (
     <div>
-      <h3  style={{fontSize:'34px'}}>{props.heading}</h3>
+      <h3  style={{fontSize:'28px'}}>{props.heading}</h3>
     </div>
   )
 }

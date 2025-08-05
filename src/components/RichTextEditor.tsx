@@ -16,7 +16,7 @@ const TextEditor = () => {
         value={content} 
         onChange={handleChange} 
         theme="snow" 
-        placeholder="Start typing..."
+        placeholder="Share Something..."
         
       />
  

@@ -5,11 +5,12 @@ import Loader from './components/Loader';
 
 
 
+
 // Lazy load components
 const Login = lazy(() => import('./Auth/login'));
 const Register = lazy(() => import('./Auth/register'));
 const PatientDashboard = lazy(() => import('./pages/patient/Home/PatientDashboard'));
-const DoctorDashboard = lazy(() => import('./pages/doctor/Home/DoctorDashboard'));
+
 const Header = lazy(() => import('./components/header'));
 const SymptomMonitoring = lazy(() => import('./pages/patient/Monitoring/symptomMonitoring'));
 const Vitals = lazy(() => import('./pages/patient/Monitoring/Vitals'));
@@ -20,6 +21,12 @@ const EducationDetails = lazy(() => import('./pages/patient/education/EducationD
  const Collaboration=lazy(()=>import('./pages/patient/collabroation/Collaboration'));
  const Community=lazy(()=>import('./pages/patient/community/Community'))
  const CommunityDeatils =lazy(()=> import('./pages/patient/community/CommunityDeatils'))
+ const PatientProfile=lazy(()=>import('./pages/patient/patientprofile/PatientProfile'))
+ 
+
+ //doctor screen
+ const DoctorDashboard = lazy(() => import('./pages/doctor/Home/DoctorDashboard'));
+ const MyPatientList=lazy(()=>import('./pages/doctor/MyPatientList/MyPatientList'))
 
 
 const getUserRole = (): string | null => localStorage.getItem('role');
@@ -121,16 +128,16 @@ const AppRouter: React.FC = () => {
             <CommunityDeatils/>
           </ProtectedRoute>}/>
           
-              {/* <Route
-            path="/pratice"
+              <Route
+            path="/patient-profile"
             element={
               <ProtectedRoute role="patient">
-             <Todo/>
+             <PatientProfile/>
               </ProtectedRoute>
             }
           >
 
-          </Route> */}
+          </Route>
 
           <Route
             path="/doctor-dashboard"
@@ -140,7 +147,15 @@ const AppRouter: React.FC = () => {
               </ProtectedRoute>
             }
           />
-
+           <Route
+            path="/my-patient-list"
+            element={
+              <ProtectedRoute role="doctor">
+                <   MyPatientList />
+              </ProtectedRoute>
+            }
+          />
+       
           {/* Fallback Route for 404 */}
           <Route path="*" element={<div>404 - Page Not Found</div>} />
         </Routes>
